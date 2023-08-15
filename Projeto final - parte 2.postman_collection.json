@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "b482855a-d046-443e-b35d-0cec035a887c",
+		"name": "Projeto final - parte 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16578249"
+	},
+	"item": [
+		{
+			"name": "Lista Financeiro",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{tokenUsuario}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3010/api/financeiro",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"financeiro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro Financeiro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{tokenUsuario}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome_titular\": \"Thiago Malcher\",\r\n    \"nome_banco\": \"Bradesco\",\r\n    \"tipo_conta\": \"Investimento\",\r\n    \"limite_cartao\": 5000.80\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3010/api/financeiro/cadastro",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"financeiro",
+						"cadastro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Financeiro",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{tokenUsuario}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo_conta\": \"Corrente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3010/api/financeiro/atualizar/{{idFinanceiro}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"financeiro",
+						"atualizar",
+						"{{idFinanceiro}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagar Financeiro",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{tokenUsuario}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3010/api/financeiro/apagar/{{idFinanceiro}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"financeiro",
+						"apagar",
+						"{{idFinanceiro}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
